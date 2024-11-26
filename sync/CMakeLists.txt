@@ -1,0 +1,15 @@
+# Tasks
+
+add_subdirectory(deadlock)
+add_subdirectory(dining)
+add_subdirectory(livelock)
+add_subdirectory(lock_guard)
+add_subdirectory(mutexed)
+add_subdirectory(spinlock)
+add_subdirectory(mutex)
+add_subdirectory(try_lock)
+add_subdirectory(condvar)
+add_subdirectory(wait_group)
+add_subdirectory(semaphore)
+add_subdirectory(barrier)
+add_subdirectory(queue_spinlock)

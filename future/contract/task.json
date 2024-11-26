@@ -1,0 +1,48 @@
+{
+  "tests": [
+    {
+      "targets": ["unit_tests"],
+      "profiles": ["DebugASan"]
+    },
+    {
+      "targets": ["model_tests"],
+      "profiles": ["Matrix"]
+    },
+    {
+      "targets": ["stress_tests"],
+      "profiles": [
+        "FaultyThreadASan",
+        "FaultyThreadTSan",
+        "Release"
+      ]
+    },
+    {
+      "targets": ["lf_tests"],
+      "profiles": ["Matrix"]
+    },
+    {
+      "targets": ["stat_tests"],
+      "profiles": ["Matrix"]
+    }
+  ],	  
+  "lint_files": ["exe"],
+  "submit_files": ["exe"],
+  "forbidden": [
+    {
+      "patterns": [
+        "std::future",
+        "yield",
+        "sleep_for",
+        "SpinWait"
+      ]
+    },
+    {
+      "patterns": [
+        "std::shared_ptr",
+        "std::make_shared",
+        "std::mutex",
+        "std::condition_variable"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "tests": [
+    {
+      "targets": [
+        "stamped_ptr_unit_tests"
+      ],
+      "profiles": [
+        "Debug"
+      ]
+    },
+    {
+      "targets": [
+        "stack_unit_tests"
+      ],
+      "profiles": [
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "stack_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "stack_stress_tests"
+      ],
+      "profiles": [
+        "FaultyThreadASan",
+        "FaultyThreadTSan",
+        "Release"
+      ]
+    },
+    {
+      "targets": [
+        "stack_model_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    }
+  ],
+  "lint_files": [
+    "stamped_ptr.hpp",
+    "lock_free_stack.hpp"
+  ],
+  "submit_files": [
+    "stamped_ptr.hpp",
+    "lock_free_stack.hpp"
+  ],
+  "forbidden_patterns": [
+    "mutex"
+  ]
+}

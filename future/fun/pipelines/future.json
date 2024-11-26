@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "targets": [
+        "future_unit_tests"
+      ],
+      "profiles": [
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "future_stress_tests"
+      ],
+      "profiles": [
+        "FaultyThreadASan",
+        "FaultyThreadTSan",
+        "Release"
+      ]
+    }
+  ]
+}

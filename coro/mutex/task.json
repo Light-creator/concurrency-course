@@ -1,0 +1,283 @@
+{
+  "tests": [
+    {
+      "targets": [
+        "thread_wait_group_unit_tests"
+      ],
+      "profiles": [
+        "Debug"
+      ]
+    },
+    {
+      "targets": [
+        "thread_wait_group_random_tests"
+      ],
+      "profiles": [
+        "Matrix",
+        "FaultyThreadASan",
+        "FaultyThreadTSan"
+      ]
+    },
+    {
+      "targets": [
+        "thread_wait_group_model_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "thread_wait_group_futex_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "thread_wait_group_storage_tests"
+      ],
+      "profiles": [
+        "Matrix",
+        "FaultyThreadASan"
+      ]
+    },
+    {
+      "targets": [
+        "sched_run_loop_unit_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "sched_run_loop_intrusive_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "sched_run_loop_sane_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "sched_run_loop_alloc_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "sched_thread_pool_unit_tests"
+      ],
+      "profiles": [
+        "Debug"
+      ]
+    },
+    {
+      "targets": [
+        "sched_thread_pool_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "sched_thread_pool_stress_tests"
+      ],
+      "profiles": [
+        "Fiber",
+        "FaultyThreadASan",
+        "FaultyThreadTSan",
+        "Release"
+      ]
+    },
+    {
+      "targets": [
+        "sched_thread_pool_load_balancing_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "sched_thread_pool_load_balancing_random2_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sched_run_loop_unit_tests"
+      ],
+      "profiles": [
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sched_thread_pool_unit_tests"
+      ],
+      "profiles": [
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_event_unit_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_event_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_event_stress_tests"
+      ],
+      "profiles": [
+        "Release",
+        "FaultyThreadASan",
+        "FaultyThreadTSan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_event_storage_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_event_storage_stress_tests"
+      ],
+      "profiles": [
+        "FaultyThreadASan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_mutex_scoped_lock_unit_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_mutex_scoped_lock_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_mutex_scoped_lock_stress_tests"
+      ],
+      "profiles": [
+        "Release",
+        "FaultyThreadASan",
+        "FaultyThreadTSan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_mutex_run_unit_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_mutex_run_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_mutex_run_stress_tests"
+      ],
+      "profiles": [
+        "Release",
+        "FaultyThreadASan",
+        "FaultyThreadTSan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_wait_group_unit_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_wait_group_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_wait_group_stress_tests"
+      ],
+      "profiles": [
+        "Release",
+        "FaultyThreadASan",
+        "FaultyThreadTSan"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_wait_group_storage_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "coro_sync_wait_group_storage_stress_tests"
+      ],
+      "profiles": [
+        "FaultyThreadASan"
+      ]
+    }
+  ],
+  "lint_files": ["exe"],
+  "submit_files": ["exe"],
+  "forbidden": []
+}

@@ -1,0 +1,36 @@
+{
+  "tests": [
+    {
+      "targets": [
+        "unit_tests"
+      ],
+      "profiles": [
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "stress_tests"
+      ],
+      "profiles": [
+        "FaultyThreadASan",
+        "FaultyThreadTSan",
+        "Release"
+      ]
+    }
+  ],
+  "lint_files": [
+    "work_stealing_queue.hpp"
+  ],
+  "submit_files": [
+    "work_stealing_queue.hpp"
+  ]
+}

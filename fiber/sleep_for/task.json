@@ -1,0 +1,56 @@
+{
+  "tests": [
+    {
+      "targets": [
+        "fiber_yield_unit_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": ["fiber_yield_stress_tests"],
+      "profiles": [
+        "FaultyThreadASan",
+        "FaultyThreadTSan"
+      ]
+    },
+    {
+      "targets": ["fiber_sleep_for_1t_unit_tests"],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": ["fiber_sleep_for_1t_stress_tests"],
+      "profiles": [
+        "Debug",
+        "FaultyThreadASan",
+        "FaultyThreadTSan"
+      ]
+    },
+    {
+      "targets": ["fiber_sleep_for_mt_unit_tests"],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": ["fiber_sleep_for_mt_stress_tests"],
+      "profiles": [
+        "Debug",
+        "FaultyThreadASan",
+        "FaultyThreadTSan"
+      ]
+    }
+  ],
+  "lint_files": ["exe"],
+  "submit_files": ["exe"],
+  "forbidden_patterns": [
+    "shared_ptr",
+    "sleep_for"
+  ]
+}

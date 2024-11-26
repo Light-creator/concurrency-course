@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "targets": ["unit_tests"],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    }
+  ],
+  "submit_files": ["function.hpp"],
+  "lint_files": ["function.hpp"],
+  "forbidden": [
+    {
+      "patterns": [
+        "std::function",
+        "fu2::"
+      ],
+      "hint": "Implement your own Function"
+    }
+  ]
+}

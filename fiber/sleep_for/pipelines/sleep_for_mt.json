@@ -1,0 +1,19 @@
+{
+  "tests": [
+    {
+      "targets": ["fiber_sleep_for_mt_unit_tests"],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": ["fiber_sleep_for_mt_stress_tests"],
+      "profiles": [
+        "Debug",
+        "FaultyThreadASan",
+        "FaultyThreadTSan"
+      ]
+    }
+  ]
+}

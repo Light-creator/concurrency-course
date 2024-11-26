@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "targets": [
+        "fiber_sched_await_unit_tests"
+      ],
+      "profiles": [
+        "DebugASan"
+      ]
+    }
+  ]
+}

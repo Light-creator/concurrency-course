@@ -1,0 +1,23 @@
+{
+  "tests": [
+    {
+      "targets": ["unit_tests"],
+      "profiles": ["Debug"]
+    },
+    {
+      "targets": ["random_tests"],
+      "profiles": ["Matrix"]
+    },
+    {
+      "targets": ["stress_tests"],
+      "profiles": [
+        "Release",
+        "FaultyThreadTSan",
+        "FaultyThreadASan",
+        "Matrix"
+      ]
+    }
+  ],
+  "submit_files": ["queue_spinlock.hpp"],
+  "lint_files": ["queue_spinlock.hpp"]
+}

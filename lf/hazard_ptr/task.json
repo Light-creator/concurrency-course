@@ -1,0 +1,69 @@
+{
+  "tests": [
+    {
+      "targets": [
+        "stack_unit_tests"
+      ],
+      "profiles": [
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "stack_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "stack_stress_tests"
+      ],
+      "profiles": [
+        "FaultyThreadASan",
+        "FaultyThreadTSan",
+        "Release"
+      ]
+    },
+    {
+      "targets": [
+        "queue_unit_tests"
+      ],
+      "profiles": [
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "queue_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "queue_stress_lf_tests"
+      ],
+      "profiles": [
+        "FaultyThreadASan",
+        "FaultyThreadTSan",
+        "Release"
+      ]
+    }
+  ],
+  "lint_files": [
+    "memory",
+    "lock_free_queue.hpp",
+    "lock_free_stack.hpp"
+  ],
+  "submit_files": [
+    "memory",
+    "lock_free_queue.hpp",
+    "lock_free_stack.hpp"
+  ],
+  "forbidden_patterns": [
+    "mutex"
+  ]
+}

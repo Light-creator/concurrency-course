@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "targets": [
+        "stamped_ptr_unit_tests"
+      ],
+      "profiles": [
+        "Debug"
+      ]
+    }
+  ]
+}

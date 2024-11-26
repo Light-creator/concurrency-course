@@ -1,0 +1,143 @@
+{
+  "tests": [
+    {
+      "targets": [
+        "thread_wait_group_unit_tests"
+      ],
+      "profiles": [
+        "Debug"
+      ]
+    },
+    {
+      "targets": [
+        "thread_wait_group_random_tests"
+      ],
+      "profiles": [
+        "Matrix",
+        "FaultyThreadASan",
+        "FaultyThreadTSan"
+      ]
+    },
+    {
+      "targets": [
+        "thread_wait_group_model_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "thread_wait_group_futex_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "thread_wait_group_storage_tests"
+      ],
+      "profiles": [
+        "Matrix",
+        "FaultyThreadASan"
+      ]
+    },
+    {
+      "targets": [
+        "sched_run_loop_unit_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "sched_run_loop_intrusive_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "sched_run_loop_sane_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "sched_run_loop_alloc_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "sched_thread_pool_unit_tests"
+      ],
+      "profiles": [
+        "Debug"
+      ]
+    },
+    {
+      "targets": [
+        "sched_thread_pool_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "sched_thread_pool_stress_tests"
+      ],
+      "profiles": [
+        "Fiber",
+        "FaultyThreadASan",
+        "FaultyThreadTSan",
+        "Release"
+      ]
+    },
+    {
+      "targets": [
+        "sched_thread_pool_load_balancing_random_tests"
+      ],
+      "profiles": [
+        "Matrix"
+      ]
+    },
+    {
+      "targets": [
+        "future_unit_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    },
+    {
+      "targets": [
+        "future_lazy_unit_tests"
+      ],
+      "profiles": [
+        "Debug",
+        "DebugASan"
+      ]
+    }
+  ],
+  "lint_files": ["exe"],
+  "submit_files": ["exe"],
+  "forbidden": [
+    {
+      "patterns": [
+        "Stub"
+      ]
+    }
+  ]
+}
