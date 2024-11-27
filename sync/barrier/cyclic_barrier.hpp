@@ -2,34 +2,32 @@
 
 #include <twist/ed/std/mutex.hpp>
 #include <twist/ed/std/condition_variable.hpp>
-#include <twist/ed/fmt/print.hpp>
+#include <fmt/core.h>
 
 #include <cstddef>
 
 class CyclicBarrier {
 public:
-  explicit CyclicBarrier(size_t c): lim(c) {}
+  explicit CyclicBarrier(size_t c): cap_(c) {}
 
   void ArriveAndWait() {
-    twist::ed::std::unique_lock<twist::ed::std::mutex> lk(m);
-    // twist::ed::fmt::println("Count {}", count+1);
-
-    size_t prev_phase = phase;
-
-    if(++count == lim) {
-      count = 0;
-      phase++;
-      cv.notify_all();
+    std::unique_lock<twist::ed::std::mutex> lk(m_);
+    
+    int my_group = group_;
+    if(++sz_ < cap_) {
+      while(group_ == my_group) cv_.wait(lk);
     } else {
-      cv.wait(lk, [this, prev_phase]{ return this->phase != prev_phase; });
+      sz_ = 0;
+      group_++;
+      cv_.notify_all();
     }
-  }
+  } 
 
 private: 
-  size_t count = 0;
-  size_t lim = 1;
-  size_t phase = 0;
-
-  twist::ed::std::mutex m;
-  twist::ed::std::condition_variable cv;
+  size_t cap_;
+  size_t sz_ = 0;
+  int group_ = 0;
+  
+  twist::ed::std::mutex m_;
+  twist::ed::std::condition_variable cv_;
 };
