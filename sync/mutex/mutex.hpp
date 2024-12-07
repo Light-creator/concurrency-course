@@ -10,27 +10,32 @@ class Mutex {
  public: 
   uint32_t cmpxchg(uint32_t expected, uint32_t desired) {
     uint32_t* old = &expected;
-    locked_.compare_exchange_weak(expected, desired);
+    locked_.compare_exchange_strong(expected, desired);
     return *old;
   }
 
   void Lock() {
-    int state = cmpxchg(0, 1);
-
+    uint32_t state = cmpxchg(0, 1);
+    
+    // state != 0 -> we have to wait
     if(state != 0) {
       do {
-        if(state == 2 || cmpxchg(1, 2) != 0) {
+        // if we already have waiters || waiters are comming
+        if(state == 2 || cmpxchg(1, 2)) {
           twist::ed::futex::Wait(locked_, 2);
         }
+
+        // try to lock with waiters until we will be waken up
       } while((state = cmpxchg(0, 2)) != 0);
     }
   }
 
   void Unlock() {
-    auto wake_key = twist::ed::futex::PrepareWake(locked_);
     if(locked_.fetch_sub(1) != 1) {
+      auto wake_key = twist::ed::futex::PrepareWake(locked_);
       locked_.store(0);
       twist::ed::futex::WakeAll(wake_key);
+
     }
   }
   
@@ -45,6 +50,8 @@ class Mutex {
   }
 
  private:
+  // 0 - unloked
+  // 1 - loked without waiters
+  // 2 - loked with waiters
   twist::ed::std::atomic<uint32_t> locked_{0};
-  twist::ed::std::atomic<uint32_t> owner_{0};
 };
